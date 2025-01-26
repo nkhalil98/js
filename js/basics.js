@@ -36,7 +36,7 @@ i++; // postfix increment
 ++i; // prefix increment
 // similarly for decrement
 
-// string manipulation
+// string manipulation (strings are immutable)
 // prettier-ignore
 let one = 'one'; // single quotes
 let two = "two"; // double quotes
@@ -112,10 +112,10 @@ a && b; // b (if a is truthy, return b)
 a || b; // a (if a is truthy, return a)
 
 // compound data types
-// arrays
+// arrays (arrays are mutable)
 let arr = [1, 2, 3, "four", true];
 let firstElement = arr[0]; // indexing
-arr[0] = 10; // arrays are mutable
+arr[0] = 10; // updating an element
 let len = arr.length; // get the length of an array
 let mat = [
   [1, 2, 3],
@@ -151,11 +151,12 @@ let numsCopy = nums.slice(); // copy an array (shallow copy)
 let spliced = nums.splice(1, 2); // remove elements from an array starting from an index
 
 // objects (key-value pairs)
+// objects are mutable
 let obj = { name: "John", age: 30 }; // object literal (keys are strings)
 let obj2 = { key1: 1, key_2: 2, "key 3": 3, "key#?4": 4 }; // need to use string literals if keys are not valid identifiers
 let obj3 = new Object(); // object constructor
 
-// accessing object properties
+// accessing object keys (properties)
 let name = obj.name; // dot notation
 let age = obj["age"]; // bracket notation
 obj["name"] = "Jane"; // updating object properties
@@ -221,6 +222,9 @@ switch (day) {
 
 // ternary operator
 let isPositive = num > 0 ? true : false;
+
+// loops (loop variable initialization -> conditional test -> update loop
+// variable)
 
 // while loop
 let speed = 55;
@@ -428,8 +432,40 @@ let jane = new Student("Jane", 25, 10);
 console.log(jane instanceof Student); // true
 console.log(jane instanceof Person); // true
 
-// TODO
 // prototype-based inheritance (JavaScript is a prototype-based language)
-// every object in JavaScript has a prototype
+// class-based inheritance is syntactic sugar for prototype-based inheritance
+
+// constructor function
+function Cat(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+// prototype method
+Cat.prototype.meow = function () {
+  return `${this.name} says meow!`;
+};
+
+// create an instance of a constructor function
+let tofu = new Cat("Tofu", 2);
+console.log(tofu.meow());
+
+tofu.__proto__; // access the prototype of an object
+tofu.hasOwnProperty("name"); // check if an object has a property
+tofu.__proto__.hasOwnProperty("meow"); // check if an object has a method
+tofu.hasOwnProperty("meow"); // false (meow is a prototype method)
+
+// overriding prototype methods (shadowing)
+tofu.meow = function () {
+  return "Meow!";
+};
+console.log(tofu.meow());
+tofu.hasOwnProperty("meow"); // true (meow is now an own property)
+
 // prototype chain
-// Object -> Person -> Student
+// objects inherit properties and methods from their prototype
+// the prototype itself is an object and has its own prototype
+// the prototype chain is a series of objects linked together that ends with
+// Object.prototype
+// any object that isn't created with a constructor function has
+// Object.prototype as its prototype

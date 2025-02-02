@@ -9,3 +9,13 @@ h1 {
 body {
   background-color: slategray;
 }
+
+p strong {
+  color: crimson;
+}
+
+.paragraphs {
+  background-color: ghostwhite;
+  padding: 1em;
+  display: inline-block;
+}

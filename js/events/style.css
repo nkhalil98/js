@@ -1,0 +1,22 @@
+#main-heading:hover {
+    color: crimson;
+    cursor: pointer;
+}
+
+li {
+    cursor: pointer;
+}
+
+li:hover {
+    color: goldenrod;
+    text-decoration: underline;
+}
+
+#box {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 10px;
+    height: 10px;
+    background-color: crimson;
+}

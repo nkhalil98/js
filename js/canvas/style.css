@@ -1,0 +1,10 @@
+#canvas {
+    border: 4px solid black;
+    margin: 0 auto;
+    display: block;
+}
+
+#buttons {
+    text-align: center;
+    padding: 10px;
+}

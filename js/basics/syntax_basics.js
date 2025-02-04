@@ -258,7 +258,7 @@ for (let [index, veg] of veggies.entries()) {
 let RGBColors = ["red", "green", "blue"];
 let [red, green, blue] = RGBColors; // destructuring assignment
 
-// for-in loop (iter    ate over the properties of an object)
+// for-in loop (iterate over the properties of an object)
 let person = { name: "John", age: 30 };
 for (let key in person) {
   console.log(key, person[key]);

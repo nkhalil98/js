@@ -5,17 +5,20 @@ play.addEventListener("click", () => {
   play.style.display = "none";
   playing.style = "";
 
-  let audioCtx = new AudioContext();
+  Tone.start();
 
-  let oscNode = audioCtx.createOscillator();
-  oscNode.frequency.value = 440;
+  let synth = new Tone.Synth({
+    oscillator: {
+      type: "sine", // other options include "square", "sawtooth", "triangle"
+    },
+    envelope: {
+      attack: 0,
+      decay: 0,
+      sustain: 1,
+      release: 0,
+    },
+    volume: -6,
+  }).toDestination();
 
-  let gainNode = audioCtx.createGain();
-  gainNode.gain.value = 0.5;
-
-  oscNode.connect(gainNode);
-  gainNode.connect(audioCtx.destination);
-
-  oscNode.start(audioCtx.currentTime);
-  oscNode.stop(audioCtx.currentTime + 2);
+  synth.triggerAttackRelease("A4", 2, 0);
 });

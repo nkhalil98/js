@@ -111,10 +111,10 @@ function adjustAngle(ball, paddle, speedShift) {
 
   if (distanceFromTop < 0) {
     // ball hit near the top of the paddle
-    ballSpeed.y = -speedShift;
+    ballSpeed.y -= speedShift;
   } else if (distanceFromBottom < 0) {
     // ball hit near the bottom of the paddle
-    ballSpeed.y = speedShift;
+    ballSpeed.y += speedShift;
   }
 }
 

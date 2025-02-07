@@ -1,0 +1,18 @@
+.boring {
+    fill: none;
+    stroke: black;
+    stroke-width: 3px;
+}
+
+.fun {
+    fill: hotpink;
+    stroke: royalblue;
+    stroke-width: 5px;
+    stroke-dasharray: 10.5;
+    stroke-linejoin: round;
+}
+
+.fun:hover {
+    fill: royalblue;
+    stroke: hotpink;
+}

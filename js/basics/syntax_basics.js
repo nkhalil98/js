@@ -386,8 +386,13 @@ function counter() {
 let increment = counter();
 console.log(increment());
 
-// arrays methods with callbacks (map, filter, reduce)
+// arrays methods with callbacks (forEach, map, filter, reduce)
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let doubledNumbers = [];
+numbers.forEach((num) => {
+  doubledNumbers.push(num * 2);
+});
 let evenNumbers = numbers.filter((num) => num % 2 === 0);
 let evenNumbersSquared = evenNumbers.map((num) => num ** 2);
 let sumOfEvenNumbersSquared = evenNumbersSquared.reduce(

@@ -1,6 +1,6 @@
 .boring {
-    fill: none;
-    stroke: black;
+    fill: none;  /* background-color */
+    stroke: black;  /* border-color */
     stroke-width: 3px;
 }
 

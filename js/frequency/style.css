@@ -1,0 +1,15 @@
+.lowercase {
+    fill: purple;
+}
+
+.uppercase {
+    fill: orangered;
+}
+
+.digit {
+    fill: green;
+}
+
+.special {
+    fill: #555;
+}

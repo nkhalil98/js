@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    align-items: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box {
+    padding: 0px 15px 0px 15px;
+    border: 1px solid #888;
+    margin-bottom: 15px;
+}
+
+#info .label {
+    font-weight: bold;
+    display: block;
+}
+
+#info a {
+    text-decoration: none;
+}
+
+#info a:hover {
+    text-decoration: underline;
+}
+
+#key h1 {
+    font-size: 1.5em;
+}
+
+#key .color {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0px 10px 0px 10px;
+}

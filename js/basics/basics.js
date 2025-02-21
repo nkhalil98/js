@@ -1,3 +1,5 @@
+// JavaScript Syntax Basics
+
 // printing to console
 console.log("Hello, World!");
 
